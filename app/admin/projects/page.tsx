@@ -7,50 +7,10 @@ import { Plus, Search, Edit, Trash2, Eye } from "lucide-react"
 
 export default function ProjectsAdmin() {
   // Dados simulados de projetos
-  const ongoingProjects = [
-    {
-      id: 1,
-      title: "ATLAS: Sistema de Aprendizado e Adaptação de Terreno Autônomo",
-      startDate: "Janeiro 2023",
-      status: "Em andamento",
-      description:
-        "Desenvolvendo um sistema robótico capaz de navegar e se adaptar autonomamente a terrenos desconhecidos e desafiadores usando técnicas de aprendizado por reforço.",
-    },
-    {
-      id: 2,
-      title: "NEXUS: Sistema de Compreensão Cruzada Aprimorado por Redes Neurais",
-      startDate: "Março 2023",
-      status: "Em andamento",
-      description:
-        "Criando um sistema de IA multimodal que pode entender e traduzir entre diferentes formas de dados, incluindo texto, imagens e leituras de sensores.",
-    },
-    {
-      id: 3,
-      title: "SENTINEL: Monitoramento Ambiental Inteligente com Inteligência de Enxame",
-      startDate: "Abril 2023",
-      status: "Em andamento",
-      description:
-        "Desenvolvendo um enxame de pequenos robôs autônomos que trabalham juntos para monitorar condições ambientais e coletar dados em locais de difícil acesso ou perigosos.",
-    },
+  const ongoingProjects: any[] = [
   ]
 
-  const completedProjects = [
-    {
-      id: 4,
-      title: "HERMES: Manipulação Robótica que Emula Humanos com Sensibilidade Aprimorada",
-      endDate: "Novembro 2022",
-      status: "Concluído",
-      description:
-        "Desenvolveu uma mão robótica com sensores táteis capaz de manipular objetos delicados com destreza e sensibilidade semelhantes às humanas.",
-    },
-    {
-      id: 5,
-      title: "IRIS: Sistema Inteligente de Reconhecimento e Interpretação",
-      endDate: "Agosto 2022",
-      status: "Concluído",
-      description:
-        "Criou um sistema avançado de visão computacional capaz de reconhecer e interpretar cenas complexas e atividades humanas em tempo real.",
-    },
+  const completedProjects: any[] = [
   ]
 
   return (
@@ -153,4 +113,3 @@ export default function ProjectsAdmin() {
     </div>
   )
 }
-

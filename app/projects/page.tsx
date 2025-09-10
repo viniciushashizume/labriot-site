@@ -24,219 +24,37 @@ export default function ProjectsPage() {
                 <TabsTrigger value="completed">Projetos Concluídos</TabsTrigger>
               </TabsList>
               <TabsContent value="ongoing" className="mt-6">
-                <div className="grid gap-6 md:grid-cols-2">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>ATLAS: Sistema de Aprendizado e Adaptação de Terreno Autônomo</CardTitle>
-                      <CardDescription>Iniciado: Janeiro 2023</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mb-4 aspect-video overflow-hidden rounded-lg">
-                        <Image
-                          src="/placeholder.svg?height=225&width=400"
-                          alt="Robô ATLAS navegando em terreno acidentado"
-                          width={400}
-                          height={225}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Desenvolvendo um sistema robótico capaz de navegar e se adaptar autonomamente a terrenos
-                        desconhecidos e desafiadores usando técnicas de aprendizado por reforço.
-                      </p>
-                    </CardContent>
-                    <CardFooter>
-                      <Button asChild>
-                        <Link href="/projects/atlas">Ver Detalhes do Projeto</Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>NEXUS: Sistema de Compreensão Cruzada Aprimorado por Redes Neurais</CardTitle>
-                      <CardDescription>Iniciado: Março 2023</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mb-4 aspect-video overflow-hidden rounded-lg">
-                        <Image
-                          src="/placeholder.svg?height=225&width=400"
-                          alt="Visualização da rede neural NEXUS"
-                          width={400}
-                          height={225}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Criando um sistema de IA multimodal que pode entender e traduzir entre diferentes formas de
-                        dados, incluindo texto, imagens e leituras de sensores.
-                      </p>
-                    </CardContent>
-                    <CardFooter>
-                      <Button asChild>
-                        <Link href="/projects/nexus">Ver Detalhes do Projeto</Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>SENTINEL: Monitoramento Ambiental Inteligente com Inteligência de Enxame</CardTitle>
-                      <CardDescription>Iniciado: Abril 2023</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mb-4 aspect-video overflow-hidden rounded-lg">
-                        <Image
-                          src="/placeholder.svg?height=225&width=400"
-                          alt="Robôs de enxame SENTINEL monitorando o ambiente"
-                          width={400}
-                          height={225}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Desenvolvendo um enxame de pequenos robôs autônomos que trabalham juntos para monitorar
-                        condições ambientais e coletar dados em locais de difícil acesso ou perigosos.
-                      </p>
-                    </CardContent>
-                    <CardFooter>
-                      <Button asChild>
-                        <Link href="/projects/sentinel">Ver Detalhes do Projeto</Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>ARIA: Interface Robótica Adaptativa para Assistência</CardTitle>
-                      <CardDescription>Iniciado: Junho 2023</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mb-4 aspect-video overflow-hidden rounded-lg">
-                        <Image
-                          src="/placeholder.svg?height=225&width=400"
-                          alt="Robô assistivo ARIA interagindo com uma pessoa"
-                          width={400}
-                          height={225}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Criando um sistema robótico assistivo que pode se adaptar às necessidades e preferências
-                        individuais do usuário, fornecendo suporte personalizado para atividades diárias.
-                      </p>
-                    </CardContent>
-                    <CardFooter>
-                      <Button asChild>
-                        <Link href="/projects/aria">Ver Detalhes do Projeto</Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                </div>
-              </TabsContent>
+              <div className="grid gap-6 md:grid-cols-2">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Alimentador IoT para Pets</CardTitle>
+                    <CardDescription>Iniciado: Agosto 2025</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="mb-4 aspect-video overflow-hidden rounded-lg">
+                      <Image
+                        src="/projects/alimentador-iot.png" 
+                        alt="Alimentador IoT para Pets"
+                        width={400}
+                        height={225}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Um projeto de IoT para monitorar o nível de comida em um comedouro de animais de estimação usando um microcontrolador ESP8266 e um sensor ultrassônico.
+                    </p>
+                  </CardContent>
+                  <CardFooter>
+                    <Button asChild>
+                      <Link href="/projects/iot-pet-feeder">Ver Detalhes do Projeto</Link>
+                    </Button>
+                  </CardFooter>
+                </Card>
+              </div>
+            </TabsContent>
               <TabsContent value="completed" className="mt-6">
                 <div className="grid gap-6 md:grid-cols-2">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>HERMES: Manipulação Robótica que Emula Humanos com Sensibilidade Aprimorada</CardTitle>
-                      <CardDescription>Concluído: Novembro 2022</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mb-4 aspect-video overflow-hidden rounded-lg">
-                        <Image
-                          src="/placeholder.svg?height=225&width=400"
-                          alt="Mão robótica HERMES manipulando objetos delicados"
-                          width={400}
-                          height={225}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Desenvolveu uma mão robótica com sensores táteis capaz de manipular objetos delicados com
-                        destreza e sensibilidade semelhantes às humanas.
-                      </p>
-                    </CardContent>
-                    <CardFooter>
-                      <Button asChild>
-                        <Link href="/projects/hermes">Ver Detalhes do Projeto</Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>IRIS: Sistema Inteligente de Reconhecimento e Interpretação</CardTitle>
-                      <CardDescription>Concluído: Agosto 2022</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mb-4 aspect-video overflow-hidden rounded-lg">
-                        <Image
-                          src="/placeholder.svg?height=225&width=400"
-                          alt="Sistema de visão computacional IRIS em ação"
-                          width={400}
-                          height={225}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Criou um sistema avançado de visão computacional capaz de reconhecer e interpretar cenas
-                        complexas e atividades humanas em tempo real.
-                      </p>
-                    </CardContent>
-                    <CardFooter>
-                      <Button asChild>
-                        <Link href="/projects/iris">Ver Detalhes do Projeto</Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>ECHO: Comunicação Aprimorada para Operações Humano-Robô</CardTitle>
-                      <CardDescription>Concluído: Maio 2022</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mb-4 aspect-video overflow-hidden rounded-lg">
-                        <Image
-                          src="/placeholder.svg?height=225&width=400"
-                          alt="Demonstração do sistema de comunicação ECHO"
-                          width={400}
-                          height={225}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Desenvolveu uma interface de linguagem natural que permite comunicação intuitiva entre humanos e
-                        robôs em ambientes de trabalho colaborativo.
-                      </p>
-                    </CardContent>
-                    <CardFooter>
-                      <Button asChild>
-                        <Link href="/projects/echo">Ver Detalhes do Projeto</Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>PULSE: Compreensão Preditiva de Sistemas de Aprendizado em Ambientes</CardTitle>
-                      <CardDescription>Concluído: Fevereiro 2022</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mb-4 aspect-video overflow-hidden rounded-lg">
-                        <Image
-                          src="/placeholder.svg?height=225&width=400"
-                          alt="Visualização do sistema PULSE"
-                          width={400}
-                          height={225}
-                          className="object-cover w-full h-full"
-                        />
-                      </div>
-                      <p className="text-sm text-muted-foreground">
-                        Criou uma estrutura para prever e compreender como sistemas de IA aprendem e se adaptam a novos
-                        ambientes, melhorando a transparência e explicabilidade.
-                      </p>
-                    </CardContent>
-                    <CardFooter>
-                      <Button asChild>
-                        <Link href="/projects/pulse">Ver Detalhes do Projeto</Link>
-                      </Button>
-                    </CardFooter>
-                  </Card>
+                  
                 </div>
               </TabsContent>
             </Tabs>
@@ -408,4 +226,3 @@ export default function ProjectsPage() {
     </div>
   )
 }
-
