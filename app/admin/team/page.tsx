@@ -8,62 +8,13 @@ import { Plus, Search, Edit, Trash2, Eye } from "lucide-react"
 
 export default function TeamAdmin() {
   // Dados simulados de membros da equipe
-  const leadership = [
-    {
-      id: 1,
-      name: "Dra. Sarah Chen",
-      role: "Diretora do Laboratório",
-      specialization: "Robótica, Visão Computacional, Ética em IA",
-      image: "/placeholder.svg?height=400&width=400",
-    },
-    {
-      id: 2,
-      name: "Dr. Marcus Johnson",
-      role: "Pesquisador Líder",
-      specialization: "Aprendizado de Máquina, Redes Neurais",
-      image: "/placeholder.svg?height=400&width=400",
-    },
+  const leadership: any[] = [
   ]
 
-  const researchers = [
-    {
-      id: 3,
-      name: "Dra. Aisha Patel",
-      role: "Pesquisadora Sênior",
-      specialization: "Manipulação Robótica, Fusão de Sensores",
-      image: "/placeholder.svg?height=300&width=300",
-    },
-    {
-      id: 4,
-      name: "Dr. James Wilson",
-      role: "Pesquisador Sênior",
-      specialization: "Visão Computacional, SLAM Visual",
-      image: "/placeholder.svg?height=300&width=300",
-    },
-    {
-      id: 5,
-      name: "Dra. Elena Rodriguez",
-      role: "Cientista de Pesquisa",
-      specialization: "Processamento de Linguagem Natural, Interação Humano-Robô",
-      image: "/placeholder.svg?height=300&width=300",
-    },
+  const researchers: any[] = [
   ]
 
-  const engineers = [
-    {
-      id: 6,
-      name: "Michael Zhang",
-      role: "Engenheiro Líder",
-      specialization: "Desenvolvimento de Hardware para Sistemas Robóticos",
-      image: "/placeholder.svg?height=300&width=300",
-    },
-    {
-      id: 7,
-      name: "Sophia Martinez",
-      role: "Engenheira de Software Sênior",
-      specialization: "Arquiteturas de Software para Controle Robótico",
-      image: "/placeholder.svg?height=300&width=300",
-    },
+  const engineers: any[] = [
   ]
 
   return (
@@ -213,4 +164,3 @@ export default function TeamAdmin() {
     </div>
   )
 }
-

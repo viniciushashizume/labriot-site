@@ -18,43 +18,6 @@ export default function EventsAdmin() {
       description:
         "Um workshop de três dias com pesquisadores líderes no campo da robótica e IA, apresentando as últimas inovações e tendências.",
     },
-    {
-      id: 2,
-      title: "Conferência sobre Aprendizado de Máquina em Robótica",
-      date: "5 de Agosto, 2023",
-      location: "Online",
-      type: "Conferência",
-      status: "Próximo",
-      description: "Uma conferência virtual focada nas aplicações de aprendizado de máquina em sistemas robóticos.",
-    },
-    {
-      id: 3,
-      title: "Dia de Portas Abertas do Laboratório Labriot",
-      date: "20 de Setembro, 2023",
-      location: "Laboratório Labriot, São Paulo",
-      type: "Evento Público",
-      status: "Próximo",
-      description:
-        "Uma oportunidade para o público visitar nosso laboratório e conhecer nossos projetos de pesquisa em andamento.",
-    },
-    {
-      id: 4,
-      title: "Simpósio sobre Ética em IA",
-      date: "10 de Março, 2023",
-      location: "Universidade de São Paulo",
-      type: "Simpósio",
-      status: "Passado",
-      description: "Um simpósio que discutiu os desafios éticos no desenvolvimento e implementação de sistemas de IA.",
-    },
-    {
-      id: 5,
-      title: "Hackathon de Robótica",
-      date: "25-26 de Janeiro, 2023",
-      location: "Centro de Inovação, São Paulo",
-      type: "Hackathon",
-      status: "Passado",
-      description: "Um evento de 48 horas onde equipes desenvolveram soluções robóticas para desafios do mundo real.",
-    },
   ]
 
   return (

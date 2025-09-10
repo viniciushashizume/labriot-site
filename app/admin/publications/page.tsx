@@ -17,14 +17,6 @@ export default function PublicationsAdmin() {
       year: "2023",
       doi: "10.1109/TRO.2023.1234567",
     },
-    {
-      id: 2,
-      title: "Compreensão de Cenas 3D em Tempo Real para Navegação Autônoma",
-      authors: "Johnson, M., Patel, A., & Chen, S.",
-      journal: "International Conference on Robotics and Automation (ICRA)",
-      year: "2023",
-      doi: "10.1109/ICRA.2023.7654321",
-    },
   ]
 
   const publications2022 = [
@@ -36,14 +28,6 @@ export default function PublicationsAdmin() {
       year: "2022",
       doi: "10.1007/CoRL.2022.9876543",
     },
-    {
-      id: 4,
-      title: "Considerações Éticas na Tomada de Decisão Autônoma",
-      authors: "Chen, S., & Johnson, M.",
-      journal: "AI Ethics Journal",
-      year: "2022",
-      doi: "10.1007/AIEthics.2022.5678901",
-    },
   ]
 
   const publications2021 = [
@@ -54,15 +38,7 @@ export default function PublicationsAdmin() {
       journal: "Neural Information Processing Systems (NeurIPS)",
       year: "2021",
       doi: "10.1007/NeurIPS.2021.3456789",
-    },
-    {
-      id: 6,
-      title: "Robótica de Enxame para Monitoramento Ambiental",
-      authors: "Patel, A., & Chen, S.",
-      journal: "Science Robotics",
-      year: "2021",
-      doi: "10.1126/scirobotics.2021.1234567",
-    },
+    }
   ]
 
   return (

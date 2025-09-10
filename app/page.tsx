@@ -294,62 +294,7 @@ export default function Home() {
               </p>
             </div>
           </div>
-          <div className="mx-auto grid max-w-5xl gap-8 py-12 md:grid-cols-2 lg:grid-cols-3">
-            <div className="flex flex-col items-center space-y-4">
-              <div className="relative h-40 w-40 overflow-hidden rounded-full">
-                <Image
-                  src="/placeholder.svg?height=160&width=160"
-                  alt="Dra. Sarah Chen"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-2 text-center">
-                <h3 className="text-xl font-bold">Dra. Sarah Chen</h3>
-                <p className="text-sm text-muted-foreground">Diretora do Laboratório</p>
-                <p className="text-sm">Robótica, Visão Computacional, Ética em IA</p>
-              </div>
-              <Button variant="outline" asChild size="sm">
-                <Link href="/team/sarah-chen">Ver Perfil</Link>
-              </Button>
-            </div>
-            <div className="flex flex-col items-center space-y-4">
-              <div className="relative h-40 w-40 overflow-hidden rounded-full">
-                <Image
-                  src="/placeholder.svg?height=160&width=160"
-                  alt="Dr. Marcus Johnson"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-2 text-center">
-                <h3 className="text-xl font-bold">Dr. Marcus Johnson</h3>
-                <p className="text-sm text-muted-foreground">Pesquisador Líder</p>
-                <p className="text-sm">Aprendizado de Máquina, Redes Neurais</p>
-              </div>
-              <Button variant="outline" asChild size="sm">
-                <Link href="/team/marcus-johnson">Ver Perfil</Link>
-              </Button>
-            </div>
-            <div className="flex flex-col items-center space-y-4">
-              <div className="relative h-40 w-40 overflow-hidden rounded-full">
-                <Image
-                  src="/placeholder.svg?height=160&width=160"
-                  alt="Dra. Aisha Patel"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="space-y-2 text-center">
-                <h3 className="text-xl font-bold">Dra. Aisha Patel</h3>
-                <p className="text-sm text-muted-foreground">Pesquisadora Sênior</p>
-                <p className="text-sm">Manipulação Robótica, Fusão de Sensores</p>
-              </div>
-              <Button variant="outline" asChild size="sm">
-                <Link href="/team/aisha-patel">Ver Perfil</Link>
-              </Button>
-            </div>
-          </div>
+          
           <div className="flex justify-center">
             <Button asChild>
               <Link href="/team">
@@ -385,8 +330,6 @@ export default function Home() {
               <div className="space-y-2">
                 <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">Destaques de Pesquisa</h2>
                 <p className="text-muted-foreground md:text-xl/relaxed">
-                  Nosso trabalho foi publicado em revistas e conferências de alto nível, contribuindo para o avanço da
-                  robótica e IA.
                 </p>
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">

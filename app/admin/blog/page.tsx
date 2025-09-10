@@ -17,33 +17,6 @@ export default function BlogAdmin() {
       excerpt:
         "Nossa equipe desenvolveu uma nova tecnologia de sensoriamento tátil que permite aos robôs manipular objetos delicados com precisão e sensibilidade sem precedentes.",
     },
-    {
-      id: 2,
-      title: "Labriot Recebe Subsídio de R$ 12,5 Milhões para Pesquisa em Navegação Autônoma",
-      author: "Dra. Sarah Chen",
-      date: "10 de Março de 2023",
-      status: "Publicado",
-      excerpt:
-        "Nosso laboratório recebeu um subsídio significativo para avançar a pesquisa em sistemas de navegação autônoma para ambientes complexos.",
-    },
-    {
-      id: 3,
-      title: "Novo Artigo Publicado na Nature Robotics",
-      author: "Dr. Marcus Johnson",
-      date: "28 de Fevereiro de 2023",
-      status: "Publicado",
-      excerpt:
-        "A pesquisa inovadora da nossa equipe sobre sensoriamento tátil em manipulação robótica foi publicada na Nature Robotics.",
-    },
-    {
-      id: 4,
-      title: "Inteligência Artificial e Ética: Desafios e Soluções",
-      author: "Dr. Thomas Lee",
-      date: "",
-      status: "Rascunho",
-      excerpt:
-        "Uma análise dos desafios éticos enfrentados no desenvolvimento de sistemas de IA e possíveis soluções para garantir um desenvolvimento responsável.",
-    },
   ]
 
   return (
