@@ -9,13 +9,13 @@ export default function BlogAdmin() {
   // Dados simulados de posts do blog
   const blogPosts = [
     {
-      id: 1,
-      title: "Avanço na Manipulação Robótica: Nova Tecnologia de Sensoriamento Tátil",
-      author: "Dra. Aisha Patel",
-      date: "15 de Março de 2023",
-      status: "Publicado",
+      id: -1,
+      title: "",
+      author: "",
+      date: "",
+      status: "",
       excerpt:
-        "Nossa equipe desenvolveu uma nova tecnologia de sensoriamento tátil que permite aos robôs manipular objetos delicados com precisão e sensibilidade sem precedentes.",
+        "",
     },
   ]
 

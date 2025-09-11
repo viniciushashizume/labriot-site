@@ -9,9 +9,9 @@ export default function ResearchAdmin() {
   const researchAreas = [
     {
       id: 1,
-      title: "Visão Computacional",
-      description: "Capacitando máquinas para interpretar e compreender informações visuais do mundo.",
-      topics: ["Detecção e Reconhecimento de Objetos", "Compreensão e Segmentação de Cenas", "SLAM Visual e Navegação"],
+      title: "",
+      description: "",
+      topics: [],
     }
   ]
 
