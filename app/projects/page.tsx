@@ -1,10 +1,30 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useEffect, useState } from "react"
 
 export default function ProjectsPage() {
+  const [projects, setProjects] = useState<any[]>([])
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/projects')
+      .then(res => res.json())
+      .then(data => {
+        setProjects(data)
+        setLoading(false)
+      })
+  }, [])
+
+  const ongoingProjects = projects.filter(p => p.status === 'ongoing');
+  const completedProjects = projects.filter(p => p.status === 'completed');
+
+  if (loading) return <div>Carregando...</div>
+
   return (
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
@@ -24,37 +44,65 @@ export default function ProjectsPage() {
                 <TabsTrigger value="completed">Projetos Concluídos</TabsTrigger>
               </TabsList>
               <TabsContent value="ongoing" className="mt-6">
-              <div className="grid gap-6 md:grid-cols-2">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Alimentador IoT para Pets</CardTitle>
-                    <CardDescription>Iniciado: Agosto 2025</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="mb-4 aspect-video overflow-hidden rounded-lg">
-                      <Image
-                        src="/projects/alimentador-iot.png" 
-                        alt="Alimentador IoT para Pets"
-                        width={400}
-                        height={225}
-                        className="object-cover w-full h-full"
-                      />
-                    </div>
-                    <p className="text-sm text-muted-foreground">
-                      Um projeto de IoT para monitorar o nível de comida em um comedouro de animais de estimação usando um microcontrolador ESP8266 e um sensor ultrassônico.
-                    </p>
-                  </CardContent>
-                  <CardFooter>
-                    <Button asChild>
-                      <Link href="/projects/iot-pet-feeder">Ver Detalhes do Projeto</Link>
-                    </Button>
-                  </CardFooter>
-                </Card>
-              </div>
+                <div className="grid gap-6 md:grid-cols-2">
+                  {ongoingProjects.map(project => (
+                    <Card key={project.id}>
+                      <CardHeader>
+                        <CardTitle>{project.title}</CardTitle>
+                        <CardDescription>Iniciado: {project.startDate}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="mb-4 aspect-video overflow-hidden rounded-lg">
+                          <Image
+                            src={project.image || "/placeholder.svg"}
+                            alt={project.title}
+                            width={400}
+                            height={225}
+                            className="object-cover w-full h-full"
+                          />
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          {project.description}
+                        </p>
+                      </CardContent>
+                      <CardFooter>
+                        <Button asChild>
+                          <Link href={`/projects/${project.id}`}>Ver Detalhes do Projeto</Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  ))}
+                </div>
             </TabsContent>
               <TabsContent value="completed" className="mt-6">
                 <div className="grid gap-6 md:grid-cols-2">
-                  
+                  {completedProjects.map(project => (
+                    <Card key={project.id}>
+                      <CardHeader>
+                        <CardTitle>{project.title}</CardTitle>
+                        <CardDescription>Concluído: {project.endDate}</CardDescription>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="mb-4 aspect-video overflow-hidden rounded-lg">
+                          <Image
+                            src={project.image || "/placeholder.svg"}
+                            alt={project.title}
+                            width={400}
+                            height={225}
+                            className="object-cover w-full h-full"
+                          />
+                        </div>
+                        <p className="text-sm text-muted-foreground">
+                          {project.description}
+                        </p>
+                      </CardContent>
+                      <CardFooter>
+                        <Button asChild>
+                          <Link href={`/projects/${project.id}`}>Ver Detalhes do Projeto</Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  ))}
                 </div>
               </TabsContent>
             </Tabs>

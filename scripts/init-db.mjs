@@ -11,6 +11,16 @@ async function initDb() {
       category TEXT NOT NULL CHECK(category IN ('leadership', 'students')),
       image TEXT
     );
+
+    CREATE TABLE IF NOT EXISTS projects (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT NOT NULL,
+      description TEXT,
+      status TEXT NOT NULL CHECK(status IN ('ongoing', 'completed')),
+      startDate TEXT,
+      endDate TEXT,
+      image TEXT
+    );
   `);
   console.log('Banco de dados inicializado com sucesso.');
 }

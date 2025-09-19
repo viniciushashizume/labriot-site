@@ -1,31 +1,37 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Plus, Search, Edit, Trash2, Eye } from "lucide-react"
+import { useEffect, useState } from "react"
 
 export default function ProjectsAdmin() {
-  // Dados simulados de projetos
-  const ongoingProjects = [
-    {
-      id: 1,
-      title: "Alimentador IoT para Pets",
-      startDate: "Agosto 2025",
-      status: "Em Andamento",
-      description: "Um projeto de IoT para monitorar o nível de comida em um comedouro de animais de estimação usando um microcontrolador ESP8266 e um sensor ultrassônico."
-    }
-  ];
+  const [projects, setProjects] = useState<any[]>([])
+  const [loading, setLoading] = useState(true);
 
-  const completedProjects = [
-    {
-      id: 2,
-      title: "Braço Robótico com IA",
-      endDate: "Julho 2025",
-      status: "Concluído",
-      description: "Desenvolvimento de um braço robótico que utiliza IA para manipulação precisa de objetos."
+  useEffect(() => {
+    fetch('/api/projects')
+      .then(res => res.json())
+      .then(data => {
+        setProjects(data)
+        setLoading(false)
+      })
+  }, [])
+
+  const handleDelete = async (id: number) => {
+    if (confirm('Tem certeza que deseja excluir este projeto?')) {
+      await fetch(`/api/projects/${id}`, { method: 'DELETE' });
+      setProjects(projects.filter(project => project.id !== id));
     }
-  ];
+  }
+
+  const ongoingProjects = projects.filter(p => p.status === 'ongoing');
+  const completedProjects = projects.filter(p => p.status === 'completed');
+
+  if (loading) return <div>Carregando...</div>
 
   return (
     <div className="space-y-6">
@@ -73,7 +79,7 @@ export default function ProjectsAdmin() {
                       Editar
                     </Link>
                   </Button>
-                  <Button variant="outline" size="sm" className="text-destructive">
+                  <Button variant="outline" size="sm" className="text-destructive" onClick={() => handleDelete(project.id)}>
                     <Trash2 className="mr-2 h-4 w-4" />
                     Excluir
                   </Button>
@@ -108,7 +114,7 @@ export default function ProjectsAdmin() {
                       Editar
                     </Link>
                   </Button>
-                  <Button variant="outline" size="sm" className="text-destructive">
+                  <Button variant="outline" size="sm" className="text-destructive" onClick={() => handleDelete(project.id)}>
                     <Trash2 className="mr-2 h-4 w-4" />
                     Excluir
                   </Button>
