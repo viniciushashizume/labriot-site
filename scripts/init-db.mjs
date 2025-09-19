@@ -21,6 +21,21 @@ async function initDb() {
       endDate TEXT,
       image TEXT
     );
+
+    CREATE TABLE IF NOT EXISTS research (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT NOT NULL,
+      description TEXT
+    );
+
+      CREATE TABLE IF NOT EXISTS publications (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT NOT NULL,
+      authors TEXT NOT NULL,
+      journal TEXT,
+      year INTEGER NOT NULL,
+      doi TEXT
+    );
   `);
   console.log('Banco de dados inicializado com sucesso.');
 }
