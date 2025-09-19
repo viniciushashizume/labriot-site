@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft } from 'lucide-react';
 
@@ -16,6 +17,7 @@ export default function EditPublication({ params }: { params: { id: string } }) 
     journal: '',
     year: '',
     doi: '',
+    description: '',
   });
   const router = useRouter();
   const { id } = params;
@@ -30,7 +32,7 @@ export default function EditPublication({ params }: { params: { id: string } }) 
     }
   }, [id]);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setPublication(prev => ({ ...prev, [name]: value }));
   };
@@ -80,6 +82,10 @@ export default function EditPublication({ params }: { params: { id: string } }) 
             <div>
               <Label htmlFor="doi">DOI</Label>
               <Input id="doi" name="doi" value={publication.doi} onChange={handleChange} />
+            </div>
+            <div>
+              <Label htmlFor="description">Descrição</Label>
+              <Textarea id="description" name="description" value={publication.description} onChange={handleChange} />
             </div>
             <Button type="submit">Salvar Alterações</Button>
           </form>

@@ -7,6 +7,7 @@ import LatestNews from "@/components/latest-news"
 import ResearchHighlights from "@/components/research-highlights"
 import TeamMembers from "@/components/team-members"
 import Projects from "@/components/projects"
+import Research from "@/components/research"
 
 export default function Home() {
   return (

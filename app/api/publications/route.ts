@@ -10,11 +10,11 @@ export async function GET() {
 export async function POST(request: Request) {
   const db = await openDb();
   const data = await request.json();
-  const { title, authors, journal, year, doi } = data;
+  const { title, authors, journal, year, doi, description } = data;
 
   const result = await db.run(
-    'INSERT INTO publications (title, authors, journal, year, doi) VALUES (?, ?, ?, ?, ?)',
-    [title, authors, journal, year, doi]
+    'INSERT INTO publications (title, authors, journal, year, doi, description) VALUES (?, ?, ?, ?, ?, ?)',
+    [title, authors, journal, year, doi, description]
   );
 
   return NextResponse.json({ id: result.lastID, ...data });

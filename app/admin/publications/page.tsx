@@ -16,6 +16,7 @@ interface Publication {
   journal: string;
   year: number;
   doi: string;
+  description: string;
 }
 
 export default function PublicationsAdmin() {
@@ -85,6 +86,7 @@ export default function PublicationsAdmin() {
                     <p className="text-sm">
                       <span className="font-medium">DOI:</span> {publication.doi}
                     </p>
+                    <p className="text-sm text-muted-foreground">{publication.description}</p>
                   </div>
                 </CardContent>
                 <CardFooter className="flex justify-between">

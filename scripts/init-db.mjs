@@ -34,7 +34,18 @@ async function initDb() {
       authors TEXT NOT NULL,
       journal TEXT,
       year INTEGER NOT NULL,
-      doi TEXT
+      doi TEXT,
+      description TEXT
+    );
+
+ CREATE TABLE IF NOT EXISTS posts (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      title TEXT NOT NULL,
+      summary TEXT,
+      content TEXT,
+      author TEXT,
+      date TEXT,
+      image TEXT
     );
   `);
   console.log('Banco de dados inicializado com sucesso.');

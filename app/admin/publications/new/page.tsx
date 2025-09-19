@@ -6,6 +6,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowLeft } from 'lucide-react';
 
@@ -15,6 +16,7 @@ export default function NewPublication() {
   const [journal, setJournal] = useState('');
   const [year, setYear] = useState<number | ''>('');
   const [doi, setDoi] = useState('');
+  const [description, setDescription] = useState('');
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -22,7 +24,7 @@ export default function NewPublication() {
     await fetch('/api/publications', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title, authors, journal, year, doi }),
+      body: JSON.stringify({ title, authors, journal, year, doi, description }),
     });
     router.push('/admin/publications');
   };
@@ -62,6 +64,10 @@ export default function NewPublication() {
             <div>
               <Label htmlFor="doi">DOI</Label>
               <Input id="doi" value={doi} onChange={(e) => setDoi(e.target.value)} />
+            </div>
+            <div>
+              <Label htmlFor="description">Descrição</Label>
+              <Textarea id="description" value={description} onChange={(e) => setDescription(e.target.value)} />
             </div>
             <Button type="submit">Salvar Publicação</Button>
           </form>
