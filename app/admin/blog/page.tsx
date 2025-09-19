@@ -9,13 +9,22 @@ export default function BlogAdmin() {
   // Dados simulados de posts do blog
   const blogPosts = [
     {
-      id: -1,
-      title: "",
-      author: "",
-      date: "",
-      status: "",
+      id: 1,
+      title: "Avanços na Robótica Autônoma",
+      author: "Dra. Sarah Chen",
+      date: "10 de Setembro, 2025",
+      status: "Publicado",
       excerpt:
-        "",
+        "Uma visão aprofundada de nossas últimas pesquisas em sistemas de navegação autônoma e suas aplicações no mundo real.",
+    },
+    {
+      id: 2,
+      title: "O Futuro da Interação Humano-Robô",
+      author: "Dr. Marcus Johnson",
+      date: "5 de Setembro, 2025",
+      status: "Rascunho",
+      excerpt:
+        "Explorando novas interfaces e paradigmas para uma colaboração mais intuitiva e eficaz entre humanos e robôs.",
     },
   ]
 
@@ -93,4 +102,3 @@ export default function BlogAdmin() {
     </div>
   )
 }
-

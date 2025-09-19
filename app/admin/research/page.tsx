@@ -9,10 +9,16 @@ export default function ResearchAdmin() {
   const researchAreas = [
     {
       id: 1,
-      title: "",
-      description: "",
-      topics: [],
-    }
+      title: "Sistemas Autônomos",
+      description: "Desenvolvendo sistemas robóticos autônomos capazes de navegar em ambientes complexos e tomar decisões sem intervenção humana.",
+      topics: ["Navegação", "Mapeamento", "Tomada de Decisão"],
+    },
+    {
+      id: 2,
+      title: "Aprendizado de Máquina",
+      description: "Criando algoritmos avançados que permitem às máquinas aprender com dados, adaptar-se a novas entradas e realizar tarefas semelhantes às humanas.",
+      topics: ["Aprendizado Profundo", "Aprendizado por Reforço", "Visão Computacional"],
+    },
   ]
 
   return (
@@ -47,8 +53,8 @@ export default function ResearchAdmin() {
               <div>
                 <h4 className="text-sm font-medium mb-2">Tópicos Principais:</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  {area.topics.map((topic, index) => (
-                    <li key={index}>• {topic}</li>
+                  {area.topics.map((topic) => (
+                    <li key={topic}>• {topic}</li>
                   ))}
                 </ul>
               </div>
@@ -79,4 +85,3 @@ export default function ResearchAdmin() {
     </div>
   )
 }
-

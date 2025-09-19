@@ -5,7 +5,18 @@ import { ArrowRight } from "lucide-react"
 export default function LatestNews() {
   const news = [
     {
-      
+      id: 1,
+      title: "Avanço em Navegação Autônoma",
+      date: "15 de Setembro, 2025",
+      excerpt: "Nossa equipe publicou um novo artigo sobre algoritmos de SLAM visual que melhoram drasticamente a precisão da navegação em ambientes internos.",
+      slug: "avanco-navegacao-autonoma"
+    },
+    {
+      id: 2,
+      title: "Labriot Vence Competição de Robótica",
+      date: "2 de Setembro, 2025",
+      excerpt: "Estamos orgulhosos de anunciar que nosso robô autônomo, ATLAS, conquistou o primeiro lugar na Competição Internacional de Robótica 2025.",
+      slug: "vitoria-competicao-robotica"
     }
   ]
 
@@ -30,4 +41,3 @@ export default function LatestNews() {
     </div>
   )
 }
-

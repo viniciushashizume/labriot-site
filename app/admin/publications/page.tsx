@@ -10,34 +10,42 @@ export default function PublicationsAdmin() {
   // Dados simulados de publicações
   const publications2023 = [
     {
-      id: -1,
-      title: "",
-      authors: "",
-      journal: "",
-      year: "",
-      doi: "",
+      id: 1,
+      title: "Aprendizado Adaptativo em Sistemas Robóticos",
+      authors: "Chen, S., Johnson, M., & Patel, A.",
+      journal: "IEEE Transactions on Robotics",
+      year: "2023",
+      doi: "10.1109/TRO.2023.123456",
+    },
+    {
+      id: 2,
+      title: "Compreensão de Cenas 3D em Tempo Real para Navegação Autônoma",
+      authors: "Johnson, M., Patel, A., & Chen, S.",
+      journal: "International Conference on Robotics and Automation (ICRA)",
+      year: "2023",
+      doi: "10.1109/ICRA.2023.789012",
     },
   ]
 
   const publications2022 = [
     {
-      id: -1,
-      title: "",
-      authors: "",
-      journal: "",
-      year: "",
-      doi: "",
+      id: 3,
+      title: "Percepção Multi-Modal para Manipulação Robótica",
+      authors: "Patel, A., Chen, S., & Johnson, M.",
+      journal: "Conference on Robot Learning (CoRL)",
+      year: "2022",
+      doi: "10.1109/CORL.2022.345678",
     },
   ]
 
   const publications2021 = [
     {
-      id: -1,
-      title: "",
-      authors: "",
-      journal: "",
-      year: "",
-      doi: "",
+      id: 4,
+      title: "Aprendizado por Reforço para Manipulação Robótica",
+      authors: "Johnson, M., & Chen, S.",
+      journal: "Neural Information Processing Systems (NeurIPS)",
+      year: "2021",
+      doi: "10.1109/NEURIPS.2021.901234",
     }
   ]
 
@@ -205,4 +213,3 @@ export default function PublicationsAdmin() {
     </div>
   )
 }
-

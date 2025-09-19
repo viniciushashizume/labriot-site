@@ -7,11 +7,25 @@ import { Plus, Search, Edit, Trash2, Eye } from "lucide-react"
 
 export default function ProjectsAdmin() {
   // Dados simulados de projetos
-  const ongoingProjects: any[] = [
-  ]
+  const ongoingProjects = [
+    {
+      id: 1,
+      title: "Alimentador IoT para Pets",
+      startDate: "Agosto 2025",
+      status: "Em Andamento",
+      description: "Um projeto de IoT para monitorar o nível de comida em um comedouro de animais de estimação usando um microcontrolador ESP8266 e um sensor ultrassônico."
+    }
+  ];
 
-  const completedProjects: any[] = [
-  ]
+  const completedProjects = [
+    {
+      id: 2,
+      title: "Braço Robótico com IA",
+      endDate: "Julho 2025",
+      status: "Concluído",
+      description: "Desenvolvimento de um braço robótico que utiliza IA para manipulação precisa de objetos."
+    }
+  ];
 
   return (
     <div className="space-y-6">
