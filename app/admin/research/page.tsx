@@ -7,18 +7,7 @@ import { Plus, Search, Edit, Trash2, Eye } from "lucide-react"
 export default function ResearchAdmin() {
   // Dados simulados de áreas de pesquisa
   const researchAreas = [
-    {
-      id: 1,
-      title: "Sistemas Autônomos",
-      description: "Desenvolvendo sistemas robóticos autônomos capazes de navegar em ambientes complexos e tomar decisões sem intervenção humana.",
-      topics: ["Navegação", "Mapeamento", "Tomada de Decisão"],
-    },
-    {
-      id: 2,
-      title: "Aprendizado de Máquina",
-      description: "Criando algoritmos avançados que permitem às máquinas aprender com dados, adaptar-se a novas entradas e realizar tarefas semelhantes às humanas.",
-      topics: ["Aprendizado Profundo", "Aprendizado por Reforço", "Visão Computacional"],
-    },
+
   ]
 
   return (
