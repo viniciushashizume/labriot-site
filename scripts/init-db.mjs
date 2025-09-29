@@ -1,8 +1,17 @@
 import { openDb } from '../lib/db';
+import bcrypt from 'bcryptjs';
 
 async function initDb() {
   const db = await openDb();
+  
+  // Corrigido: Removido o caractere de escape antes do template literal
   await db.exec(`
+    CREATE TABLE IF NOT EXISTS users (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      username TEXT NOT NULL UNIQUE,
+      password TEXT NOT NULL
+    );
+
     CREATE TABLE IF NOT EXISTS team (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       name TEXT NOT NULL,
@@ -28,7 +37,7 @@ async function initDb() {
       description TEXT
     );
 
-      CREATE TABLE IF NOT EXISTS publications (
+    CREATE TABLE IF NOT EXISTS publications (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       title TEXT NOT NULL,
       authors TEXT NOT NULL,
@@ -38,7 +47,7 @@ async function initDb() {
       description TEXT
     );
 
- CREATE TABLE IF NOT EXISTS posts (
+    CREATE TABLE IF NOT EXISTS posts (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       title TEXT NOT NULL,
       summary TEXT,
@@ -48,6 +57,12 @@ async function initDb() {
       image TEXT
     );
   `);
+
+  const salt = await bcrypt.genSalt(10);
+  const hashedPassword = await bcrypt.hash('admin', salt);
+
+  await db.run('INSERT OR IGNORE INTO users (username, password) VALUES (?, ?)', ['admin', hashedPassword]);
+
   console.log('Banco de dados inicializado com sucesso.');
 }
 

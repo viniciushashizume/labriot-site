@@ -115,7 +115,7 @@ export default function ContactPage() {
                         <h3 className="font-medium">Email</h3>
                         <p className="text-sm text-muted-foreground">
                           <Link href="mailto:info@labriot.com" className="hover:underline">
-                            info@labriot.com
+                            labriot.utfpr@gmail.com
                           </Link>
                         </p>
                       </div>
