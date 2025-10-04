@@ -1,4 +1,7 @@
-import type { ReactNode } from "react"
+"use client"
+
+import { useEffect, type ReactNode } from "react"
+import { useRouter } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { LayoutDashboard, FileText, Users, Folder, BookOpen, Calendar, Settings, LogOut } from "lucide-react"
@@ -10,6 +13,23 @@ interface AdminLayoutProps {
 }
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'hidden') {
+        fetch('/api/auth/logout', { method: 'GET' });
+        router.push('/admin/login');
+      }
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+    };
+  }, [router]);
+
   return (
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 flex h-16 items-center gap-4 border-b bg-background px-6">
@@ -114,4 +134,3 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
     </div>
   )
 }
-

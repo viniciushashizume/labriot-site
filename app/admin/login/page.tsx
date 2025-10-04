@@ -38,8 +38,9 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <Card className="w-full max-w-sm">
+    <div className="relative flex min-h-screen items-center justify-center bg-gradient-to-br from-background to-muted">
+      <div className="absolute inset-0 bg-background/80 backdrop-blur-lg" />
+      <Card className="z-10 w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">Login de Administrador</CardTitle>
           <CardDescription>
