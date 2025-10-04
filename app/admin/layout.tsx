@@ -17,19 +17,19 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
   const pathname = usePathname();
   const isLoginPage = pathname === '/admin/login';
 
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.visibilityState === 'hidden') {
-        fetch('/api/auth/logout', { method: 'GET' });
-        router.push('/admin/login');
-      }
+useEffect(() => {
+    const handleBeforeUnload = () => {
+      // Envia um POST request para a rota de logout.
+      // O corpo da requisição é necessário para o sendBeacon funcionar como POST.
+      navigator.sendBeacon('/api/auth/logout', new Blob());
     };
-    document.addEventListener('visibilitychange', handleVisibilityChange);
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
 
     return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
     };
-  }, [router]);
+  }, []);
 
   return (
     <div className="flex min-h-screen flex-col">
