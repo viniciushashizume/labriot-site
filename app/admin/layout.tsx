@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, type ReactNode } from "react"
-import { useRouter } from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
 import { LayoutDashboard, FileText, Users, Folder, BookOpen, Calendar, Settings, LogOut } from "lucide-react"
@@ -14,6 +14,8 @@ interface AdminLayoutProps {
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
   const router = useRouter();
+  const pathname = usePathname();
+  const isLoginPage = pathname === '/admin/login';
 
   useEffect(() => {
     const handleVisibilityChange = () => {
@@ -31,7 +33,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-50 flex h-16 items-center gap-4 border-b bg-background px-6">
+      <header className={`sticky top-0 z-50 flex h-16 items-center gap-4 border-b bg-background px-6 ${isLoginPage ? 'blur-sm' : ''}`}>
         <Link href="/admin" className="flex items-center gap-2 font-semibold">
           <Image
             src="/images/labriot-logo.png"
@@ -57,7 +59,7 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         </nav>
       </header>
       <div className="flex flex-1">
-        <aside className="w-64 border-r bg-muted/40">
+        <aside className={`w-64 border-r bg-muted/40 ${isLoginPage ? 'blur-sm' : ''}`}>
           <ScrollArea className="h-[calc(100vh-4rem)]">
             <div className="flex flex-col gap-2 p-4">
               <div className="px-2 py-2">
