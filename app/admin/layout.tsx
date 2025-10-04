@@ -22,7 +22,6 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
         router.push('/admin/login');
       }
     };
-
     document.addEventListener('visibilitychange', handleVisibilityChange);
 
     return () => {
